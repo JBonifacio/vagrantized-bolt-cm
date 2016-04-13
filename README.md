@@ -11,7 +11,7 @@ git clone https://github.com/raphaelstolt/vagrantized-bolt-cm.git
 cd vagrantized-bolt-cm
 vagrant up
 ```
-When having trouble to get the Vagrant box up and running start it with `vagrant up > vagrant-up.log`, and try to resolve the issues by scanning the now available log file `vagrant-up.log` for errors.
+When having trouble to get the Vagrant box up and running, start it with `vagrant up > vagrant-up.log` and try to resolve the issues by scanning the now available log file `vagrant-up.log` for errors.
 
 # Access bolt.cm
 Add an IP hostname mapping to the `hosts` file.
