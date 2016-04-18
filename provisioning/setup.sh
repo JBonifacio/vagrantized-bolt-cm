@@ -36,7 +36,7 @@ mysql -uroot -p$DBPASSWD -e "CREATE DATABASE $DBNAME"
 mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to '$DBUSER'@'localhost' identified by '$DBPASSWD'"
 
 echo -e "\n--- Installing PHP-specific packages ---\n"
-apt-get -y install php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt php5-json php5-mysql php-apc
+apt-get -y install php5 apache2 libapache2-mod-php5 php5-intl php5-curl php5-gd php5-mcrypt php5-json php5-mysql php-apc
 
 echo -e "\n--- Enabling mod-rewrite ---\n"
 a2enmod rewrite
@@ -77,6 +77,9 @@ sudo sed -i "s/database-username/$DBUSER/" /var/www/boltcms/app/config/config.ym
 sudo sed -i "s/database-password/$DBPASSWD/" /var/www/boltcms/app/config/config.yml
 sudo sed -i "s/database-name/$DBNAME/" /var/www/boltcms/app/config/config.yml
 sudo sed -i "s/database-host/$DBHOST/" /var/www/boltcms/app/config/config.yml
+
+echo -e "\n--- Adding Twig extensions ---\n"
+sudo composer require twig/extensions
 
 echo -e "\n--- Generating de_DE locale ---\n"
 sudo locale-gen de_DE && sudo locale-gen de_DE.UTF-8
