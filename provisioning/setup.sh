@@ -77,3 +77,6 @@ sudo sed -i "s/database-username/$DBUSER/" /var/www/boltcms/app/config/config.ym
 sudo sed -i "s/database-password/$DBPASSWD/" /var/www/boltcms/app/config/config.yml
 sudo sed -i "s/database-name/$DBNAME/" /var/www/boltcms/app/config/config.yml
 sudo sed -i "s/database-host/$DBHOST/" /var/www/boltcms/app/config/config.yml
+
+echo -e "\n--- Generating de_DE locale ---\n"
+sudo locale-gen de_DE && sudo locale-gen de_DE.UTF-8
